@@ -1,0 +1,22 @@
+# Bezpečnostní hlavičky
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self';"
+</IfModule>
+
+# Zakázat výpis adresáře
+Options -Indexes
+
+# Přesměrovat všechny chyby na vlastní chybovou stránku
+ErrorDocument 404 /balanc/404.php
+ErrorDocument 403 /balanc/403.php
+ErrorDocument 500 /balanc/500.php
+
+# Povolit přístup pouze k PHP souborům
+<FilesMatch "\.(php|css|js|woff2|ttf|svg|eot)$">
+    Require all granted
+</FilesMatch>
+
+

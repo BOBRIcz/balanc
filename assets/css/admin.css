@@ -1,0 +1,109 @@
+:root {
+    /* Světlý režim */
+    --card-bg: #fff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --table-header-bg: #f8f9fa;
+    --table-hover-bg: #f8f9fa;
+    --input-bg: #fff;
+    --primary-color: #007bff;
+    --danger-color: #dc3545;
+}
+
+[data-theme="dark"] {
+    /* Tmavý režim */
+    --card-bg: #2c3338;
+    --text-color: #f8f9fa;
+    --border-color: #454d55;
+    --table-header-bg: #343a40;
+    --table-hover-bg: #32383e;
+    --input-bg: #343a40;
+    --primary-color: #0d6efd;
+    --danger-color: #dc3545;
+}
+
+/* Admin panel základní styly */
+.admin-panel {
+    padding: 20px 0;
+    color: var(--text-color);
+}
+
+/* Karty */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.card-header {
+    background-color: var(--table-header-bg);
+    border-bottom-color: var(--border-color);
+}
+
+/* Tabulky */
+.table {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.table th {
+    background-color: var(--table-header-bg);
+}
+
+.table td, 
+.table th {
+    border-color: var(--border-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-hover-bg);
+}
+
+/* Text a odkazy */
+.text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}
+
+/* Tlačítka */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Badge */
+.badge {
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: var(--danger-color);
+}
+
+/* Formulářové prvky */
+input, select, textarea {
+    background-color: var(--input-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Přepínač tématu */
+.theme-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}
+
+/* Responzivní design */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: none;
+    }
+} 

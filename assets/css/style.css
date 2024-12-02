@@ -1,0 +1,546 @@
+/* CSS proměnné */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --input-bg: #ffffff;
+    --input-text: #495057;
+    --table-bg: #ffffff;
+    --table-border: #dee2e6;
+    --positive-color: #2ecc71;
+    --negative-color: #e74c3c;
+}
+
+/* Dark mode proměnné */
+[data-theme="dark"] {
+    --bg-color: #333;
+    --text-color: #fff;
+    --card-bg: #383e44;
+    --border-color: #404040;
+    --input-bg: #2c3338;
+    --input-text: #e0e0e0;
+    --table-bg: #2c3338;
+    --table-border: #404040;
+    --positive-color: #5be6a3;
+    --negative-color: #ff6b6b;
+}
+
+/* Základní styly */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2980b9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #e3f2fd !important;
+}
+
+/* Dark mode toggle */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.slider .fa-sun {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    color: white;
+    font-size: 18px;
+    transition: .4s;
+}
+
+.slider .fa-moon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: white;
+    font-size: 18px;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Karty */
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-color: var(--border-color) !important;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.card-title {
+    color: var(--text-color);
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+/* Formulářové prvky */
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+/* Tlačítka */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Tabulky */
+.table,
+.table.table-hover,
+.card .table,
+.table-responsive .table {
+    background-color: var(--table-bg) !important;
+    color: var(--text-color) !important;
+}
+
+.table thead th,
+.table tbody td,
+.table tfoot td {
+    background-color: var(--table-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--table-border) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Responzivní design */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* Theme toggle switch */
+.theme-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2475a8;
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ikony */
+.theme-toggle-slider .fa-sun {
+    position: absolute;
+    left: 8px;
+    top: 7px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-slider .fa-moon {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Při zaškrtnutí */
+input:checked + .theme-toggle-slider {
+    background-color: #1f618d;
+}
+
+input:checked + .theme-toggle-slider:before {
+    transform: translateX(30px);
+}
+
+/* Vertikální zarovnání v navbaru */
+.navbar .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Přihlašovací formulář */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2980b9, #2c3e50);
+}
+
+.auth-box {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-box .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.auth-box label {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.auth-box .form-control {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    transition: all 0.3s ease;
+}
+
+.auth-box .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.auth-box .btn-primary {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.auth-box .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.auth-box .btn-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-box .btn-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.auth-box .custom-control-label {
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.auth-box .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.auth-box .text-center {
+    margin-top: 1rem;
+    color: var(--text-color);
+}
+
+.auth-box .text-center a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-box .text-center a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode úpravy pro auth-box */
+[data-theme="dark"] .auth-box {
+    background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .auth-box .form-control {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--input-text);
+}
+
+[data-theme="dark"] .auth-box .btn-link {
+    color: #3498db;
+}
+
+/* Responzivní design pro auth-box */
+@media (max-width: 576px) {
+    .auth-box {
+        padding: 1.5rem;
+    }
+
+    .auth-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .auth-box .btn-primary {
+        padding: 0.7rem;
+    }
+}
+
+/* Pro vnořené tabulky v detailech */
+.details-content .table,
+.casino-details .table {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    margin-bottom: 0;
+}
+
+/* Pro tabulky v modálních oknech */
+.modal .table {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Styly pro tabulky uvnitř karet */
+.card .table,
+.table-responsive .table {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Hlavička tabulky */
+.card .table thead th {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: var(--text-color) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    font-weight: 600;
+    padding: 12px 8px;
+}
+
+/* Tělo tabulky */
+.card .table tbody td {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important;
+    padding: 10px 8px;
+}
+
+.card .table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.035) !important;
+    color: var(--text-color) !important;
+}
+
+/* Pro tmavý režim */
+[data-theme="dark"] .card .table thead th {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .card .table tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .card .table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Základní styly pro bilanci */
+.table td.balance-positive,
+.balance-positive,
+.card .table td.balance-positive,
+div.balance-positive {
+    color: #2ecc71 !important; /* Jasná zelená pro light mode */
+    font-weight: 600 !important;
+}
+
+.table td.balance-negative,
+.balance-negative,
+.card .table td.balance-negative,
+div.balance-negative {
+    color: #e74c3c !important; /* Jasná červená pro light mode */
+    font-weight: 600 !important;
+}
+
+/* Dark mode override */
+[data-theme="dark"] .table td.balance-positive,
+[data-theme="dark"] .balance-positive,
+[data-theme="dark"] .card .table td.balance-positive,
+[data-theme="dark"] div.balance-positive {
+    color: #5be6a3 !important; /* Světlejší zelená pro dark mode */
+}
+
+[data-theme="dark"] .table td.balance-negative,
+[data-theme="dark"] .balance-negative,
+[data-theme="dark"] .card .table td.balance-negative,
+[data-theme="dark"] div.balance-negative {
+    color: #ff6b6b !important; /* Světlejší červená pro dark mode */
+}
+
+/* Styly pro typy transakcí */
+.transaction-type.deposit {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c !important;
+}
+
+.transaction-type.withdrawal {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71 !important;
+}
+
+/* Dark mode pro typy transakcí */
+[data-theme="dark"] .transaction-type.deposit {
+    color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .transaction-type.withdrawal {
+    color: #5be6a3 !important;
+}
+
+/* Styl pro BETA badge */
+.navbar-brand .badge {
+    background-color: #f1c40f !important; /* Žlutá barva */
+    color: #2c3e50 !important; /* Tmavý text */
+    font-size: 0.7em;
+    padding: 4px 8px;
+    font-weight: 600;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Dark mode verze */
+[data-theme="dark"] .navbar-brand .badge {
+    background-color: #f39c12 !important; /* Tmavší žlutá pro dark mode */
+    color: #fff !important; /* Bílý text v dark mode */
+}
