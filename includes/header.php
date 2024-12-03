@@ -10,6 +10,7 @@ $show_cookie_notice = isset($_SESSION["loggedin"]) && !isset($_SESSION["cookie_n
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;">
     <title>Casino Tracker</title>
 
     <!-- Zbytek stylů -->
